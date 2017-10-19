@@ -43,7 +43,6 @@
       <itemPath>../main.c</itemPath>
       <itemPath>../printf-stdarg.c</itemPath>
       <itemPath>../ConfigPerformance.c</itemPath>
-      <itemPath>../ParTest_Uno_32.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -102,7 +101,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../../Common/include; ../../../Source/include; ../../../Source/portable/MPLAB/PIC32MX;../"/>
+                  value="../../../Source/include; ../../../Source/portable/MPLAB/PIC32MX;../"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="false"/>
@@ -112,7 +111,7 @@
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
         <property key="preprocessor-macros"
-                  value="_SUPPRESS_PLIB_WARNING;_DISABLE_OPENADC10_CONFIGPORT_WARNING"/>
+                  value="_SUPPRESS_PLIB_WARNING;_DISABLE_OPENADC10_CONFIGPORT_WARNING;UNO_32"/>
         <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
         <property key="toplevel-reordering" value=""/>
