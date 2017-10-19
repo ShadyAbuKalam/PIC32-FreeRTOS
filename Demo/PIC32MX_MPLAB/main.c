@@ -87,19 +87,39 @@
 #include "ConfigPerformance.h"
 
 /* Core configuratin fuse settings */
+#ifdef UNO_32
 #pragma config FPLLMUL = MUL_20, FPLLIDIV = DIV_2, FPLLODIV = DIV_1, FWDTEN = OFF
 #pragma config POSCMOD = HS, FNOSC = PRIPLL, FPBDIV = DIV_2
 #pragma config CP = OFF, BWP = OFF, PWP = OFF
+#endif
+#ifdef BASYS_MX3
+
+#pragma config JTAGEN = OFF     
+#pragma config FWDTEN = OFF      
 
 
+/* ------------------------------------------------------------ */
+/*						Configuration Bits		                */
+/* ------------------------------------------------------------ */
 
 
+// Device Config Bits in  DEVCFG1:	
+#pragma config FNOSC =	FRCPLL
+#pragma config FSOSCEN =	OFF
+#pragma config POSCMOD =	XT
+#pragma config OSCIOFNC =	ON
+#pragma config FPBDIV =     DIV_2
+
+// Device Config Bits in  DEVCFG2:	
+#pragma config FPLLIDIV =	DIV_2
+#pragma config FPLLMUL =	MUL_20
+#pragma config FPLLODIV =	DIV_1
 
 
-
-
+#endif
 /*-----------------------------------------------------------*/
 
+/* Functions Prototypes*/
 void prvSetupHardware( void );
 
 int main( void )
