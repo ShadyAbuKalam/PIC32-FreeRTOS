@@ -121,17 +121,23 @@
 
 /* Functions Prototypes*/
 void prvSetupHardware( void );
+void simple_task(void *p);
 
 int main( void )
 {
-	/* Prepare the hardware to run this demo. */
+	/* Prepare the hardware to run the app. */
 	prvSetupHardware();
+    TRISAbits.TRISA0 = 0;
+	LATASET = 1;
+    
+	xTaskCreate( simple_task, (signed char*)"simple",  STACK_BYTES(2048), NULL, 1, NULL); 
 		/* Start the tasks and timer running. */
-		vTaskStartScheduler();
-	
+	vTaskStartScheduler();
+        
+
 	
 
-	return 0;
+	return -1;
 }
 /*-----------------------------------------------------------*/
 
@@ -144,6 +150,16 @@ void prvSetupHardware( void )
 	vHardwareUseMultiVectoredInterrupts();
 
 	portDISABLE_INTERRUPTS();
+
+}
+
+void simple_task(void* p){
+while(1) { 
+
+		LATAINV = 1;
+        
+		vTaskDelay (pdMS_TO_TICKS(500)); 
+	} 
 
 }
 /*-----------------------------------------------------------*/
